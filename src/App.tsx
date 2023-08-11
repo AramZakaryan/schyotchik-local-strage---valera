@@ -2,8 +2,7 @@ import React, {useState} from 'react';
 import "./App.css"
 import {Digit} from "./components/Digit";
 import {Buttoms} from "./components/Buttoms";
-import {Simulate} from "react-dom/test-utils";
-import reset = Simulate.reset;
+
 
 const App = () => {
     const [count, setCount] = useState<number>(0)
