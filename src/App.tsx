@@ -1,35 +1,31 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import "./App.css"
+import {Digit} from "./components/Digit";
+import {Buttoms} from "./components/Buttoms";
+import {Simulate} from "react-dom/test-utils";
+import reset = Simulate.reset;
 
 const App = () => {
-    const [value, setValue] = useState<number>(0)
+    const [count, setCount] = useState<number>(0)
 
-    useEffect(() => {
-            let CurValueString = localStorage.getItem("CurValue")
-            if (CurValueString) {
-                setValue(JSON.parse(CurValueString))
-            }
-        },
-        []
-    )
+    const maxCount = 5
+    const increase = () => setCount(count + 1)
+    const reset = () => setCount(0)
 
+    let incDisabled = count >= maxCount ? true : false
 
-    const incHandler = () => {
-        setValue(value + 1)
-    }
-
-    useEffect(() => {
-            localStorage.setItem("CurValue", JSON.stringify(value))
-        },
-        [value]
-    )
-
+    let resDisabled = count===0?true:false
 
 
     return (
-        <div>
-            <h1>{value}</h1>
-            <button onClick={incHandler}>increment</button>
+        <div className={"container"}>
+            <Digit count={count}
+                   disabled={incDisabled}/>
+            <Buttoms increase={increase}
+                     reset={reset}
+                     incDisabled={incDisabled}
+                     resDisabled={resDisabled}
+            />
         </div>
     );
 }
