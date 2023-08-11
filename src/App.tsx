@@ -7,36 +7,40 @@ const App = () => {
     const incHandler = () => {
         setValue(value + 1)
     }
-    const setToLocalStorageHandler = () => {
-        localStorage.setItem("CurValue", JSON.stringify(value))
-
+    const setToSessionStorageHandler = () => {
+        // localStorage.setItem("CurValue", JSON.stringify(value))
+        sessionStorage.setItem("CurValue", JSON.stringify(value))
     }
 
-    const getLocalStorageHandler = () => {
-        let CurValueString = localStorage.getItem("CurValue")
+    const getSessionStorageHandler = () => {
+        // let CurValueString = localStorage.getItem("CurValue")
+        let CurValueString = sessionStorage.getItem("CurValue")
         if (CurValueString) {
             setValue(JSON.parse(CurValueString))
         }
     }
 
-    const clearLocalStoragehandler = () => {
-        localStorage.clear()
+    const clearSessionStorageHandler = () => {
+        // localStorage.clear()
+        sessionStorage.clear()
         setValue(0)
     }
 
-    const removeLocalStoragehandler = () => {
-        localStorage.removeItem("CurValue")
+    const removeSessionStoragehandler = () => {
+        // localStorage.removeItem("CurValue")
+        sessionStorage.removeItem("CurValue")
+
     }
 
     return (
         <div>
             <h1>{value}</h1>
             <button onClick={incHandler}>increment</button>
-            <button onClick={setToLocalStorageHandler}>set LocalStorage</button>
-            <button onClick={getLocalStorageHandler}>get LocalStorage</button>
+            <button onClick={setToSessionStorageHandler}>set SessionStorage</button>
+            <button onClick={getSessionStorageHandler}>get SessionStorage</button>
             <br/>
-            <button onClick={clearLocalStoragehandler}>clear LocalStorage</button>
-            <button onClick={removeLocalStoragehandler}>remove LocalStorage (CurValue)</button>
+            <button onClick={clearSessionStorageHandler}>clear SessionStorage</button>
+            <button onClick={removeSessionStoragehandler}>remove SessionStorage (CurValue)</button>
         </div>
     );
 }
