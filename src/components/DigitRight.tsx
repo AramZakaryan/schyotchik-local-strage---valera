@@ -5,9 +5,9 @@ type DigitPropsType = {
     disabled: boolean
 }
 
-export const Digit: React.FC<DigitPropsType> = (props) => {
+export const DigitRight: React.FC<DigitPropsType> = (props) => {
 
-    let className = props.disabled ? "number disabled" : "number"
+    let className = props.disabled ? "digitContainerRight disabled" : "digitContainerRight"
 
     return (
         <div className={className}>

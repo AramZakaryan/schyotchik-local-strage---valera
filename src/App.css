@@ -1,26 +1,47 @@
 .container {
     background: darkturquoise;
-    margin: 100px 50px;
+    width: 400px;
+    margin: 20px auto;
     text-align: center;
-    padding: 20px;
     border-radius: 10px;
     border: 3px solid blue;
 }
 
-.number {
+.digitContainerRight {
     font-size: 100px;
     border-radius: 10px;
     border: 3px solid blue;
     color: white;
+    margin: 20px;
+    height: 120px;
+}
+
+.digitContainerLeft {
+    font-size: 40px;
+    border-radius: 10px;
+    border: 3px solid blue;
+    /*color: white;*/
+    margin: 20px;
+    height: 120px;
+}
+
+.digitContainerLeft input {
+    margin: 3px;
+    font-size: 40px;
+    width: 90px;
+}
+
+.buttonsContainer {
+    margin: 20px;
+    border-radius: 10px;
+    border: 3px solid blue;
 }
 
 button {
-    font-size: 40px;
     margin: 20px;
-    margin-bottom: 0;
+    font-size: 40px;
     border-radius: 15px;
     background: lightblue;
-    padding: 5px 15px;
 
 }
 
